@@ -3,6 +3,13 @@
 {
 	"version": "2.0.0",
 	"tasks": [
+		// Synchronize the upstream repo
+		{
+			"label": "Synchronize upstream repo",
+			"type": "shell",
+			"command": "../scripts/sync-upstream-repo.sh",
+			"problemMatcher": [] // Empty so users are not prompted to select progress reporting
+		},
 		{
 			"type": "npm",
 			"script": "watch",

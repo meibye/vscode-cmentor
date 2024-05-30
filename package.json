@@ -1,7 +1,7 @@
 {
-  "name": "twinny",
-  "displayName": "twinny - AI Code Completion and Chat",
-  "description": "Locally hosted AI code completion plugin for vscode",
+  "name": "coder-mentor",
+  "displayName": "Coder Mentor - local co-pilot for your codebase",
+  "description": "Locally hosted VSCode plugin to help answering questions about a codebase and mentor developers during introduction to the codebase.",
   "version": "3.11.39",
   "icon": "assets/icon.png",
   "keywords": [
@@ -12,6 +12,7 @@
     "no-leaks",
     "private",
     "twinny",
+    "coder-mentor",
     "ai",
     "ollama",
     "llama",
@@ -27,15 +28,15 @@
     "vscode-extension"
   ],
   "repository": {
-    "url": "https://github.com/rjmacarthy/twinny"
+    "url": "https://github.com/meibye/vscode-coder-mentor"
   },
-  "license": "MIT",
-  "publisher": "rjmacarthy",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "publisher": "meibye",
   "engines": {
     "vscode": "^1.84.0"
   },
   "bugs": {
-    "url": "https://github.com/rjmacarthy/twinny/issues"
+    "url": "https://github.com/meibye/vscode-coder-mentor/issues"
   },
   "categories": [
     "Programming Languages",
@@ -55,6 +56,11 @@
   "author": {
     "name": "rjmacarthy"
   },
+  "contributors": [
+    {
+      "name": "meibye"
+    }
+  ],
   "main": "./out/index.js",
   "contributes": {
     "menus": {

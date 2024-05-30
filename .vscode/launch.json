@@ -11,6 +11,7 @@
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "args": [
+        "--disable-extension github.copilot",
         "--extensionDevelopmentPath=${workspaceFolder}",
 				"${workspaceFolder}/example"
       ],
@@ -23,6 +24,7 @@
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "args": [
+        "--disable-extension github.copilot",
         "--extensionDevelopmentPath=${workspaceFolder}",
         "--extensionTestsPath=${workspaceFolder}/out/test/suite/index"
       ],
