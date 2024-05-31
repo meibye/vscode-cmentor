@@ -11,7 +11,10 @@
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "args": [
-        "--disable-extension github.copilot",
+        // Disable Copilot to avoid conflicts
+        // "--disable-extension 'github.copilot'",
+        // "--disable-extension 'github.copilot-chat'",
+        "--disable-extensions",
         "--extensionDevelopmentPath=${workspaceFolder}",
 				"${workspaceFolder}/example"
       ],
@@ -24,7 +27,9 @@
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "args": [
+        // Disable Copilot to avoid conflicts
         "--disable-extension github.copilot",
+        "--disable-extension github.copilot-chat",
         "--extensionDevelopmentPath=${workspaceFolder}",
         "--extensionTestsPath=${workspaceFolder}/out/test/suite/index"
       ],
