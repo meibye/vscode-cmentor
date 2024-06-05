@@ -33,7 +33,7 @@ import { TwinnyProvider } from './provider-manager'
 import { ConversationHistory } from './conversation-history'
 
 export class ChatService {
-  private _config = workspace.getConfiguration('twinny')
+  private _config = workspace.getConfiguration('cmentor')
   private _completion = ''
   private _controller?: AbortController
   private _extensionContext?: ExtensionContext
@@ -59,7 +59,7 @@ export class ChatService {
     this._extensionContext = extensionContext
     this._conversationHistory = conversationHistory
     workspace.onDidChangeConfiguration((event) => {
-      if (!event.affectsConfiguration('twinny')) {
+      if (!event.affectsConfiguration('cmentor')) {
         return
       }
       this.updateConfig()
@@ -333,7 +333,7 @@ export class ChatService {
   }
 
   private updateConfig() {
-    this._config = workspace.getConfiguration('twinny')
+    this._config = workspace.getConfiguration('cmentor')
     this._temperature = this._config.get('temperature') as number
     this._keepAlive = this._config.get('keepAlive') as string | number
   }

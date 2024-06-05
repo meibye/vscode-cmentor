@@ -25,7 +25,7 @@ type Conversations = Record<string, Conversation> | undefined
 export class ConversationHistory {
   private _context: ExtensionContext
   private _webviewView: WebviewView
-  private _config = workspace.getConfiguration('twinny')
+  private _config = workspace.getConfiguration('cmentor')
   private _keepAlive = this._config.get('keepAlive') as string | number
   private _temperature = this._config.get('temperature') as number
   private _title = ''

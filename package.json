@@ -1,6 +1,6 @@
 {
-  "name": "coder-mentor",
-  "displayName": "Coder Mentor - local co-pilot for your codebase",
+  "name": "cmentor",
+  "displayName": "Cmentor - local co-pilot for your codebase",
   "description": "Locally hosted VSCode plugin to help answering questions about a codebase and mentor developers during introduction to the codebase.",
   "version": "3.11.39",
   "icon": "assets/icon.png",
@@ -12,7 +12,7 @@
     "no-leaks",
     "private",
     "twinny",
-    "coder-mentor",
+    "cmentor",
     "ai",
     "ollama",
     "llama",
@@ -28,7 +28,7 @@
     "vscode-extension"
   ],
   "repository": {
-    "url": "https://github.com/meibye/vscode-coder-mentor"
+    "url": "https://github.com/meibye/vscode-cmentor"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "publisher": "meibye",
@@ -36,7 +36,7 @@
     "vscode": "^1.84.0"
   },
   "bugs": {
-    "url": "https://github.com/meibye/vscode-coder-mentor/issues"
+    "url": "https://github.com/meibye/vscode-cmentor/issues"
   },
   "categories": [
     "Programming Languages",
@@ -127,28 +127,28 @@
     "commands": [
       {
         "command": "twinny.explain",
-        "title": "Twinny - Explain"
+        "title": "Cmentor - Explain"
       },
       {
         "command": "twinny.refactor",
-        "title": "Twinny - Refactor"
+        "title": "Cmentor - Refactor"
       },
       {
         "command": "twinny.addTypes",
-        "title": "Twinny - Add types"
+        "title": "Cmentor - Add types"
       },
       {
         "command": "twinny.addTests",
-        "title": "Twinny - Write tests"
+        "title": "Cmentor - Write tests"
       },
       {
         "command": "twinny.generateDocs",
-        "title": "Twinny - Generate docs"
+        "title": "Cmentor - Generate docs"
       },
       {
         "command": "twinny.enable",
-        "shortTitle": "Enable twinny",
-        "title": "Enable twinny"
+        "shortTitle": "Enable cmentor",
+        "title": "Enable cmentor"
       },
       {
         "command": "twinny.stopGeneration",
@@ -160,24 +160,24 @@
       },
       {
         "command": "twinny.disable",
-        "title": "Disable twinny",
-        "shortTitle": "Disable twinny"
+        "title": "Disable cmentor",
+        "shortTitle": "Disable cmentor"
       },
       {
         "command": "twinny.sidebar.focus",
-        "shortTitle": "Enable twinny sidebar",
-        "title": "Enable twinny sidebar"
+        "shortTitle": "Enable cmentor sidebar",
+        "title": "Enable cmentor sidebar"
       },
       {
         "command": "twinny.settings",
-        "shortTitle": "twinny settings",
-        "title": "Open twinny settings",
+        "shortTitle": "Cmentor settings",
+        "title": "Open cmentor settings",
         "icon": "$(gear)"
       },
       {
         "command": "twinny.conversationHistory",
-        "shortTitle": "twinny conversation history",
-        "title": "Open twinny conversation history",
+        "shortTitle": "Cmentor conversation history",
+        "title": "Open cmentor conversation history",
         "icon": "$(history)"
       },
       {
@@ -188,20 +188,20 @@
       },
       {
         "command": "twinny.templates",
-        "shortTitle": "Edit twinny templates",
-        "title": "Edit twinny templates",
+        "shortTitle": "Edit dmentor templates",
+        "title": "Edit cmentor templates",
         "icon": "$(pencil)"
       },
       {
         "command": "twinny.manageTemplates",
-        "shortTitle": "Manage twinny templates",
-        "title": "Manage twinny templates",
+        "shortTitle": "Manage cmentor templates",
+        "title": "Manage cmentor templates",
         "icon": "$(files)"
       },
       {
         "command": "twinny.manageProviders",
-        "shortTitle": "Manage twinny providers",
-        "title": "Manage twinny providers",
+        "shortTitle": "Manage cmentor providers",
+        "title": "Manage cmentor providers",
         "icon": "$(plug)"
       },
       {
@@ -236,8 +236,8 @@
       "activitybar": [
         {
           "id": "twinny-sidebar-view",
-          "title": "twinny",
-          "icon": "assets/twinny.svg"
+          "title": "Cmentor",
+          "icon": "assets/cmentor.svg"
         }
       ]
     },
@@ -246,126 +246,126 @@
         {
           "type": "webview",
           "id": "twinny.sidebar",
-          "name": "twinny",
-          "icon": "assets/twinny.svg",
-          "contextualTitle": "twinny"
+          "name": "Cmentor",
+          "icon": "assets/cmentor.svg",
+          "contextualTitle": "Cmentor"
         }
       ]
     },
     "configuration": {
-      "title": "twinny",
+      "title": "Cmentor",
       "properties": {
-        "twinny.enabled": {
+        "cmentor.enabled": {
           "order": 0,
           "type": "boolean",
           "default": true,
-          "description": "Activates or deactivates the Twinny extension."
+          "description": "Activates or deactivates the cmentor extension."
         },
-        "twinny.autoSuggestEnabled": {
+        "cmentor.autoSuggestEnabled": {
           "order": 1,
           "type": "boolean",
           "default": true,
           "description": "Enable automatic completion suggestions, manual trigger (default shortcut Alt+\\)."
         },
-        "twinny.contextLength": {
+        "cmentor.contextLength": {
           "order": 2,
           "type": "number",
           "default": 100,
           "description": "Defines the number of lines before and after the current line to include in FIM prompts.",
           "required": true
         },
-        "twinny.debounceWait": {
+        "cmentor.debounceWait": {
           "order": 3,
           "type": "number",
           "default": 300,
           "description": "Delay in milliseconds before triggering the next completion.",
           "required": true
         },
-        "twinny.temperature": {
+        "cmentor.temperature": {
           "order": 4,
           "type": "number",
           "default": 0.2,
           "description": "Sets the model's creativity level (temperature) for generating completions.",
           "required": true
         },
-        "twinny.multilineCompletionsEnabled": {
+        "cmentor.multilineCompletionsEnabled": {
           "order": 5,
           "type": "boolean",
           "default": true,
           "description": "Experimental feature: enables the generation of multi-line completions."
         },
-        "twinny.maxLines": {
+        "cmentor.maxLines": {
           "dependencies": {
-            "twinny.multilineCompletionsEnabled": true
+            "cmentor.multilineCompletionsEnabled": true
           },
           "order": 6,
           "type": "number",
           "default": 30,
           "description": "Maximum number of lines to use for multi line completions. Applicable only when multilineCompletionsEnabled is enabled."
         },
-        "twinny.fileContextEnabled": {
+        "cmentor.fileContextEnabled": {
           "order": 8,
           "type": "boolean",
           "default": false,
           "description": "Enables scanning of neighbouring documents to enhance completion prompts. (Experimental)"
         },
-        "twinny.completionCacheEnabled": {
+        "cmentor.completionCacheEnabled": {
           "order": 9,
           "type": "boolean",
           "default": false,
           "description": "Caches FIM completions for identical prompts to enhance performance."
         },
-        "twinny.numPredictChat": {
+        "cmentor.numPredictChat": {
           "order": 10,
           "type": "number",
           "default": 512,
           "description": "Maximum token limit for chat completions.",
           "required": true
         },
-        "twinny.numPredictFim": {
+        "cmentor.numPredictFim": {
           "order": 11,
           "type": "number",
           "default": 512,
           "description": "Maximum token limit for FIM completions. Set to -1 for no limit. Twinny should stop at logical line breaks.",
           "required": true
         },
-        "twinny.enableSubsequentCompletions": {
+        "cmentor.enableSubsequentCompletions": {
           "order": 12,
           "type": "boolean",
           "default": true,
           "description": "Enable this setting to allow twinny to keep making subsequent completion requests to the API after the last completion request was accepted."
         },
-        "twinny.ollamaHostname": {
+        "cmentor.ollamaHostname": {
           "order": 13,
           "type": "string",
           "default": "0.0.0.0",
           "description": "Hostname for Ollama API.",
           "required": true
         },
-        "twinny.ollamaApiPort": {
+        "cmentor.ollamaApiPort": {
           "order": 14,
           "type": "number",
           "default": 11434,
           "description": "The API port usually `11434`",
           "required": false
         },
-        "twinny.keepAlive": {
+        "cmentor.keepAlive": {
           "order": 15,
           "type": "string",
           "default": "5m",
           "description": "Keep models in memory by making requests with keep_alive=-1. Applicable only for Ollama API."
         },
-        "twinny.ollamaUseTls": {
+        "cmentor.ollamaUseTls": {
           "order": 25,
           "type": "boolean",
           "default": false,
           "description": "Enables TLS encryption Ollama API connections."
         },
-        "twinny.enableLogging": {
+        "cmentor.enableLogging": {
           "order": 26,
           "type": "boolean",
           "default": true,
-          "description": "Enable twinny debug mode"
+          "description": "Enable cmentor debug mode"
         }
       }
     }

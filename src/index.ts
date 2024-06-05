@@ -32,9 +32,9 @@ import { getLineBreakCount } from './webview/utils'
 
 export async function activate(context: ExtensionContext) {
   setContext(context)
-  const config = workspace.getConfiguration('twinny')
+  const config = workspace.getConfiguration('cmentor')
   const statusBar = window.createStatusBarItem(StatusBarAlignment.Right)
-  const templateDir = path.join(os.homedir(), '.twinny/templates') as string
+  const templateDir = path.join(os.homedir(), '.cmentor/templates') as string
   const templateProvider = new TemplateProvider(templateDir)
   const fileInteractionCache = new FileInteractionCache()
 
@@ -243,11 +243,11 @@ export async function activate(context: ExtensionContext) {
 
   context.subscriptions.push(
     workspace.onDidChangeConfiguration((event) => {
-      if (!event.affectsConfiguration('twinny')) return
+      if (!event.affectsConfiguration('cmentor')) return
       completionProvider.updateConfig()
     })
   )
 
   if (config.get('enabled')) statusBar.show()
-  statusBar.text = '🤖'
+  statusBar.text = '👨‍💻'
 }

@@ -349,7 +349,7 @@ export const Chat = () => {
             <textarea
               ref={chatRef}
               disabled={generatingRef.current}
-              placeholder="Message twinny"
+              placeholder="Message cmentor"
               rows={1}
               value={inputText}
               className={styles.chatInput}

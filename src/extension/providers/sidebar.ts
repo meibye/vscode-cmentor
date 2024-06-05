@@ -147,7 +147,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 
   public getConfigurationValue = (data: ClientMessage) => {
     if (!data.key) return
-    const config = vscode.workspace.getConfiguration('twinny')
+    const config = vscode.workspace.getConfiguration('cmentor')
     this.view?.webview.postMessage({
       type: EVENT_NAME.twinnyGetConfigValue,
       value: {
@@ -159,7 +159,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 
   public setConfigurationValue = (data: ClientMessage) => {
     if (!data.key) return
-    const config = vscode.workspace.getConfiguration('twinny')
+    const config = vscode.workspace.getConfiguration('cmentor')
     config.update(data.key, data.data, vscode.ConfigurationTarget.Global)
   }
 

@@ -56,7 +56,7 @@ import { TwinnyProvider } from '../provider-manager'
 import { getNodeAtPosition, getParser } from '../parser-utils'
 
 export class CompletionProvider implements InlineCompletionItemProvider {
-  private _config = workspace.getConfiguration('twinny')
+  private _config = workspace.getConfiguration('cmentor')
   private _abortController: AbortController | null
   private _acceptedLastCompletion = false
   private _completionCacheEnabled = this._config.get(
@@ -529,7 +529,7 @@ export class CompletionProvider implements InlineCompletionItemProvider {
   }
 
   public updateConfig() {
-    this._config = workspace.getConfiguration('twinny')
+    this._config = workspace.getConfiguration('cmentor')
     this._completionCacheEnabled = this._config.get(
       'completionCacheEnabled'
     ) as boolean
